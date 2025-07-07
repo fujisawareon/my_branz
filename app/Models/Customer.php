@@ -58,7 +58,9 @@ class Customer extends Authenticatable
         'remember_token',
         'first_registration_flag',
         'agreement_at',
+        'created_at',
         'created_by',
+        'updated_at',
         'updated_by_manager',
         'updated_by_customer',
     ];

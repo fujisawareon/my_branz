@@ -6,7 +6,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Artisan;
-
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,15 +21,22 @@ class DatabaseSeeder extends Seeder
         Artisan::call('route:clear');
         Artisan::call('view:clear');
 
+        $tables = [
+            'buildings',
+            'building_setting',
+            'customers',
+            'customer_building',
+            'managers',
+        ];
+
+        foreach ($tables as $table) {
+            DB::table($table)->truncate();
+        }
+
         $this->call([
             BuildingSeeder::class,
+            CustomerSeeder::class,
+            ManagerSeeder::class,
         ]);
-
-        // User::factory(10)->create();
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }

@@ -24,7 +24,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $deleted_at 削除日時
  * @method static Managers create(array $attributes = [])
  */
-class Managers extends Authenticatable
+class Manager extends Authenticatable
 {
     use HasFactory, SoftDeletes, Notifiable;
 

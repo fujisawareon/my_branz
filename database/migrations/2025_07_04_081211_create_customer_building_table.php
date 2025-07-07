@@ -20,21 +20,22 @@ return new class extends Migration
             $table->unsignedBigInteger('customer_id')->comment('顧客ID');
             $table->unsignedBigInteger('building_id')->comment('物件ID');
 
-            $table->string('person_in_charge', 50)->nullable()->comment('担当者');
+            $table->unsignedBigInteger('person_in_charge')->nullable()->comment('担当者');
             $table->string('zip_code_3', 3)->nullable()->comment('郵便番号3桁');
             $table->string('zip_code_4', 4)->nullable()->comment('郵便番号4桁');
-            $table->string('prefecture_code', 2)->nullable()->comment('都道府県コード');
+            $table->string('prefecture_code', 3)->nullable()->comment('都道府県コード');
             $table->string('prefecture', 100)->nullable()->comment('都道府県');
             $table->string('city', 100)->nullable()->comment('市区町村');
             $table->string('town', 100)->nullable()->comment('町名');
             $table->string('chome', 100)->nullable()->comment('丁目');
             $table->string('banchi', 100)->nullable()->comment('番地');
             $table->string('apartment_detail', 255)->nullable()->comment('建物名・号室');
-            $table->string('country', 100)->nullable()->comment('国');
+            $table->string('country', 100)->nullable()->comment('国名');
             $table->string('address_extra', 255)->nullable()->comment('その他住所');
 
-            $table->string('sumai_type', 10)->default('')->comment('住宅の住まい');
-            $table->tinyInteger('renew_flg')->default(0)->comment('継続の有無');
+            $table->string('sumai_type', 10)->default('')->comment('住宅区分');
+            $table->string('sumai', 10)->default('')->comment('現在の住まい');
+            $table->tinyInteger('renew_flg')->default(0)->comment('買い替えの有無');
 
             $table->string('desired_plan', 100)->nullable()->comment('希望間取り');
             $table->integer('desired_area_min')->nullable()->comment('希望面積（下限）');
@@ -49,20 +50,20 @@ return new class extends Migration
             $table->string('office', 100)->nullable()->comment('勤務先');
 
             $table->tinyInteger('customer_status')->default(0)->comment('ステータス');
-            $table->tinyInteger('is_inner')->default(0)->comment('インナー');
-            $table->tinyInteger('is_online_seminar_watching')->default(0)->comment('オンラインセミナー動画視聴');
-            $table->tinyInteger('is_online_sales_meeting_reserve')->default(0)->comment('オンライン商談予約');
-            $table->tinyInteger('is_online_sales_meeting')->default(0)->comment('オンライン商談');
-            $table->tinyInteger('is_free_observe_reserve')->default(0)->comment('フリー見学予約');
-            $table->tinyInteger('is_free_observe')->default(0)->comment('フリー見学');
-            $table->tinyInteger('is_first_visit_reserve')->default(0)->comment('初来場予約');
-            $table->tinyInteger('is_first_visit')->default(0)->comment('初来場');
-            $table->tinyInteger('is_needs_recept')->default(0)->comment('要望受付');
-            $table->tinyInteger('is_regist_recept')->default(0)->comment('要望登録');
-            $table->tinyInteger('is_apply')->default(0)->comment('申込');
-            $table->tinyInteger('is_contract')->default(0)->comment('契約');
-            $table->tinyInteger('is_handover')->default(0)->comment('引渡し');
-            $table->tinyInteger('is_stop_considering')->default(0)->comment('検討中止');
+            $table->boolean('is_inner')->default(0)->comment('インナー');
+            $table->boolean('is_online_seminar_watching')->default(0)->comment('オンラインセミナー動画視聴');
+            $table->boolean('is_online_sales_meeting_reserve')->default(0)->comment('オンライン商談予約');
+            $table->boolean('is_online_sales_meeting')->default(0)->comment('オンライン商談');
+            $table->boolean('is_free_observe_reserve')->default(0)->comment('フリー見学予約');
+            $table->boolean('is_free_observe')->default(0)->comment('フリー見学');
+            $table->boolean('is_first_visit_reserve')->default(0)->comment('初来場予約');
+            $table->boolean('is_first_visit')->default(0)->comment('初来場');
+            $table->boolean('is_needs_recept')->default(0)->comment('要望受付');
+            $table->boolean('is_regist_recept')->default(0)->comment('要望登録');
+            $table->boolean('is_apply')->default(0)->comment('申込');
+            $table->boolean('is_contract')->default(0)->comment('契約');
+            $table->boolean('is_handover')->default(0)->comment('引渡し');
+            $table->boolean('is_stop_considering')->default(0)->comment('検討中止');
 
             $table->integer('base_score')->nullable()->comment('基本スコア');
             $table->integer('behavior_score')->nullable()->comment('行動スコア');
