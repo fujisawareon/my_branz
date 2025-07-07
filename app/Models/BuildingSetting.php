@@ -31,6 +31,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Illuminate\Support\Carbon $updated_at 更新日時
  * @property int|null $updated_by 更新者
  * @property \Illuminate\Support\Carbon|null $deleted_at 削除日時(ソフトデリート)
+ * @method static BuildingSetting create(array $attributes = [])
  */
 class BuildingSetting extends Model
 {

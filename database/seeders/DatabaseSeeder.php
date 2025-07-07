@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
         Artisan::call('route:clear');
         Artisan::call('view:clear');
 
-
         $this->call([
             BuildingSeeder::class,
         ]);

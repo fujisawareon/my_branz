@@ -31,6 +31,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property-read Collection<int, BinderBuildingCategory> $binderBuildingCategory
  * @property-read Collection<int, SalesSchedule> $salesSchedule
  *
+ * @method static Building create(array $attributes = [])
  */
 class Building extends Model
 {
