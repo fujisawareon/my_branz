@@ -11,7 +11,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $repo_list = require __DIR__ . '/repo_list.php';
+        foreach ($repo_list as $repo) {
+            $this->app->bind($repo['interface'], $repo['class']);
+        }
     }
 
     /**
