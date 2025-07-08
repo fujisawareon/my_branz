@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             'customers',
             'customer_building',
             'managers',
+            'building_invitation',
         ];
 
         foreach ($tables as $table) {
