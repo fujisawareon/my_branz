@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('sales_price_data', function (Blueprint $table) {
             $table->bigIncrements('id')->comment('ID');
             $table->unsignedBigInteger('building_id')->comment('物件ID');
-            $table->string('file_pass', 255)->comment('ファイルパス');
+            $table->string('file_path', 255)->comment('ファイルパス');
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('作成日時');
             $table->integer('created_by')->nullable()->comment('作成者');
@@ -33,7 +33,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('sales_price_data_id')->comment('sales_price_dataのID');
             $table->unsignedBigInteger('building_id')->comment('物件ID');
-            $table->string('file_pass', 255)->comment('ファイルパス');
+            $table->string('file_path', 255)->comment('ファイルパス');
 
             $table->timestamp('created_at')->comment('作成日時');
             $table->integer('created_by')->comment('作成者');
@@ -52,7 +52,7 @@ return new class extends Migration
                 INSERT INTO sales_price_data_history (
                     sales_price_data_id,
                     building_id,
-                    file_pass,
+                    file_path,
                     created_at,
                     created_by,
                     updated_at,
@@ -60,7 +60,7 @@ return new class extends Migration
                 ) VALUES (
                     OLD.id,
                     OLD.building_id,
-                    OLD.file_pass,
+                    OLD.file_path,
                     OLD.created_at,
                     OLD.created_by,
                     OLD.updated_at,

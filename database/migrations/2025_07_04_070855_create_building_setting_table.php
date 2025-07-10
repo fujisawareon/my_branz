@@ -27,7 +27,7 @@ return new class extends Migration
 
             $table->text('image_gallery_annotation')->nullable()->default(null)->comment('画像ギャラリー注釈文');
             $table->text('local_photo_annotation')->nullable()->default(null)->comment('現地写真設定注釈文');
-            $table->string('environment_image_pass', 255)->nullable()->default(null)->comment('間取環境性能画像');
+            $table->string('environment_image_path', 255)->nullable()->default(null)->comment('間取環境性能画像');
             $table->text('annotation_text')->nullable()->default(null)->comment('間取注釈文');
             $table->text('area_map_address')->nullable()->default(null)->comment('周辺マップ住所');
             $table->decimal('area_map_latitude', 10, 7)->nullable()->default(null)->comment('周辺マップ緯度');
@@ -58,7 +58,7 @@ return new class extends Migration
 
             $table->text('image_gallery_annotation')->nullable()->default(null)->comment('画像ギャラリー注釈文');
             $table->text('local_photo_annotation')->nullable()->default(null)->comment('現地写真設定注釈文');
-            $table->string('environment_image_pass', 255)->nullable()->default(null)->comment('間取環境性能画像');
+            $table->string('environment_image_path', 255)->nullable()->default(null)->comment('間取環境性能画像');
             $table->text('annotation_text')->nullable()->default(null)->comment('間取注釈文');
             $table->text('area_map_address')->nullable()->default(null)->comment('周辺マップ住所');
             $table->decimal('area_map_latitude', 10, 7)->nullable()->default(null)->comment('周辺マップ緯度');
@@ -90,7 +90,7 @@ return new class extends Migration
                     building_site_display_flg,
                     image_gallery_annotation,
                     local_photo_annotation,
-                    environment_image_pass,
+                    environment_image_path,
                     annotation_text,
                     created_at,
                     created_by,
@@ -108,7 +108,7 @@ return new class extends Migration
                     old.building_site_display_flg,
                     old.image_gallery_annotation,
                     old.local_photo_annotation,
-                    old.environment_image_pass,
+                    old.environment_image_path,
                     old.annotation_text,
                     old.created_at,
                     old.created_by,

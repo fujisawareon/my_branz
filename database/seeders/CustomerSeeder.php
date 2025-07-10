@@ -28,7 +28,7 @@ class CustomerSeeder extends Seeder
 
         // 顧客と物件のリレーションを作成
         $customer_ids = Customer::pluck('id')->all(); // 全顧客のIDを取得
-        $building_ids = Building::pluck('id')->all(); // 全物件のIDを取得
+        $building_ids = Building::where('id', '<=', 10)->pluck('id')->all(); // 全物件のIDを取得
         $bulk_pivot_data = [];
         foreach ($customer_ids as $customer_id) {
             // 3件未満の適当な物件を選択

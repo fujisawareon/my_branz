@@ -25,7 +25,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $country 国
  * @property string|null $address_extra その他住所
  * @property string $sumai_type 住宅の住まい
- * @property int $renew_flg 継続の有無
  * @property string|null $desired_plan 希望間取り
  * @property int|null $desired_area_min 希望面積（下限）
  * @property int|null $desired_area_max 希望面積（上限）
@@ -86,7 +85,6 @@ class CustomerBuilding extends Model
         'country',
         'address_extra',
         'sumai_type',
-        'renew_flg',
         'desired_plan',
         'desired_area_min',
         'desired_area_max',

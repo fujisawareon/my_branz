@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property bool $building_site_display_flg 物件サイト表示フラグ
  * @property string|null $image_gallery_annotation 画像ギャラリー注釈文
  * @property string|null $local_photo_annotation 現地写真設定注釈文
- * @property string|null $environment_image_pass 間取環境性能画像
+ * @property string|null $environment_image_path 間取環境性能画像
  * @property string|null $annotation_text 間取注釈文
  * @property string|null $area_map_address 周辺マップ住所
  * @property float|null $area_map_latitude 周辺マップ緯度
@@ -50,7 +50,7 @@ class BuildingSetting extends Model
         'building_site_display_flg',
         'image_gallery_annotation',
         'local_photo_annotation',
-        'environment_image_pass',
+        'environment_image_path',
         'annotation_text',
         'area_map_address',
         'area_map_latitude',

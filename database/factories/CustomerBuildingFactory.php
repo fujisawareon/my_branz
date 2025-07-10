@@ -40,7 +40,6 @@ class CustomerBuildingFactory extends Factory
             ]),
 
             'sumai_type' => '未設定', // 必須項目があれば適宜修正
-            'renew_flg' => fake()->numberBetween(1, 2), // 1〜2 のランダムな数字
 
             'desired_area_min' => rand(20, 100),
             'desired_area_max' => rand(20, 100),

@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * @property int $id ID
  * @property int $building_id 物件ID
- * @property string $file_pass ファイルパス
+ * @property string $file_path ファイルパス
  * @property string $created_at 作成日時
  * @property int|null $created_by 作成者
  * @property string $updated_at 更新日時
@@ -27,7 +27,7 @@ class SalesPriceData extends Model
 
     protected $fillable = [
         'building_id',
-        'file_pass',
+        'file_path',
         'created_by',
         'updated_by',
     ];

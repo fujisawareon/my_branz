@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('sales_file', function (Blueprint $table) {
             $table->bigIncrements('id')->comment('ID');
             $table->unsignedBigInteger('building_id')->comment('物件ID');
-            $table->string('file_pass', 255)->comment('スケジュールファイルパス');
+            $table->string('file_path', 255)->comment('スケジュールファイルパス');
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('作成日時');
             $table->integer('created_by')->comment('作成者');
@@ -33,7 +33,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('sales_file_id')->comment('販売価格表ファイルのID');
             $table->unsignedBigInteger('building_id')->default(0)->comment('物件ID');
-            $table->string('file_pass', 255)->comment('スケジュールファイルパス');
+            $table->string('file_path', 255)->comment('スケジュールファイルパス');
 
             $table->timestamp('created_at')->comment('作成日時');
             $table->integer('created_by')->comment('作成者');
@@ -51,7 +51,7 @@ return new class extends Migration
                 INSERT INTO sales_file_history (
                     sales_file_id,
                     building_id,
-                    file_pass,
+                    file_path,
                     created_at,
                     created_by,
                     updated_at,
@@ -59,7 +59,7 @@ return new class extends Migration
                 ) VALUES (
                     OLD.id,
                     OLD.building_id,
-                    OLD.file_pass,
+                    OLD.file_path,
                     OLD.created_at,
                     OLD.created_by,
                     OLD.updated_at,

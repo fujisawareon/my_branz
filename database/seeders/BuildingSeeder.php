@@ -28,7 +28,7 @@ class BuildingSeeder extends Seeder
                 'building_site_display_flg' => 0,
                 'image_gallery_annotation' => null,
                 'local_photo_annotation' => null,
-                'environment_image_pass' => null,
+                'environment_image_path' => null,
                 'annotation_text' => null,
                 'area_map_address' => null,
                 'area_map_latitude' => null,

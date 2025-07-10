@@ -23,7 +23,7 @@ return new class extends Migration
             $table->tinyInteger('sort')->default(0)->comment('並び順');
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('作成日時');
-            $table->integer('created_by')->nullable()->comment('作成者');
+            $table->integer('created_by')->comment('作成者');
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'))->comment('更新日時');
             $table->integer('updated_by')->nullable()->comment('更新者');
             $table->softDeletes();

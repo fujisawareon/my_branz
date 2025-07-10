@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $title プランタイトル
  * @property int $layout 間取り
  * @property string $display_name 間取りプラン表示名
- * @property string $image_pass 画像
+ * @property string $image_path 画像
  * @property string|null $note 注釈
  * @property bool $display_flg 表示フラグ
  * @property int $sort 並び順
@@ -38,7 +38,7 @@ class FloorPlan extends Model
         'title',
         'layout',
         'display_name',
-        'image_pass',
+        'image_path',
         'note',
         'display_flg',
         'sort',

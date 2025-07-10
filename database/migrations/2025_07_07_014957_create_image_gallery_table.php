@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigIncrements('id')->comment('ID');
             $table->bigInteger('building_id')->comment('物件ID');
             $table->string('title', 100)->comment('プランタイトル');
-            $table->string('image_file_pass', 100)->comment('画像ギャラリー');
+            $table->string('image_file_path', 100)->comment('画像ギャラリー');
             $table->tinyInteger('sort')->comment('並び順');
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('作成日時');
@@ -35,7 +35,7 @@ return new class extends Migration
             $table->bigInteger('image_gallery_id')->comment('image_galleryのID');
             $table->bigInteger('building_id')->comment('物件ID');
             $table->string('title', 100)->comment('プランタイトル');
-            $table->string('image_file_pass', 100)->comment('画像ギャラリー');
+            $table->string('image_file_path', 100)->comment('画像ギャラリー');
             $table->tinyInteger('sort')->comment('並び順');
 
             $table->timestamp('created_at')->comment('作成日時');
@@ -55,7 +55,7 @@ return new class extends Migration
                     image_gallery_id,
                     building_id,
                     title,
-                    image_file_pass,
+                    image_file_path,
                     sort,
                     created_at,
                     created_by,
@@ -65,7 +65,7 @@ return new class extends Migration
                     OLD.id,
                     OLD.building_id,
                     OLD.title,
-                    OLD.image_file_pass,
+                    OLD.image_file_path,
                     OLD.sort,
                     OLD.created_at,
                     OLD.created_by,

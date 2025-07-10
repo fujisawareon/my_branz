@@ -35,7 +35,6 @@ return new class extends Migration
 
             $table->string('sumai_type', 10)->default('')->comment('住宅区分');
             $table->string('sumai', 10)->default('')->comment('現在の住まい');
-            $table->tinyInteger('renew_flg')->default(0)->comment('買い替えの有無');
 
             $table->string('desired_plan', 100)->nullable()->comment('希望間取り');
             $table->integer('desired_area_min')->nullable()->comment('希望面積（下限）');

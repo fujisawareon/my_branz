@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int $id ID
  * @property int $building_id 物件ID
  * @property string $title プランタイトル
- * @property string $image_file_pass 画像ギャラリー
+ * @property string $image_file_path 画像ギャラリー
  * @property int $sort 並び順
  * @property string $created_at 作成日時
  * @property int $created_by 作成者
@@ -30,7 +30,7 @@ class ImageGallery extends Model
     protected $fillable = [
         'building_id',
         'title',
-        'image_file_pass',
+        'image_file_path',
         'sort',
         'created_by',
         'updated_by',

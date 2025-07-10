@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('title', 100)->comment('プランタイトル');
             $table->tinyInteger('layout')->comment('間取り');
             $table->string('display_name', 100)->comment('間取りプラン表示名');
-            $table->string('image_pass', 100)->comment('画像');
+            $table->string('image_path', 100)->comment('画像');
             $table->string('note', 5000)->nullable()->default(null)->comment('注釈');
             $table->boolean('display_flg')->default(0)->comment('表示フラグ');
             $table->tinyInteger('sort')->default(0)->comment('並び順');
@@ -45,7 +45,7 @@ return new class extends Migration
             $table->string('title', 100)->comment('プランタイトル');
             $table->tinyInteger('layout')->comment('間取り');
             $table->string('display_name', 100)->comment('間取りプラン表示名');
-            $table->string('image_pass', 100)->comment('画像');
+            $table->string('image_path', 100)->comment('画像');
             $table->string('note', 5000)->nullable()->default(null)->comment('注釈');
             $table->boolean('display_flg')->default(0)->comment('表示フラグ');
             $table->tinyInteger('sort')->default(0)->comment('並び順');
@@ -71,7 +71,7 @@ return new class extends Migration
                     title,
                     layout,
                     display_name,
-                    image_pass,
+                    image_path,
                     note,
                     display_flg,
                     sort,
@@ -86,7 +86,7 @@ return new class extends Migration
                     OLD.title,
                     OLD.layout,
                     OLD.display_name,
-                    OLD.image_pass,
+                    OLD.image_path,
                     OLD.note,
                     OLD.display_flg,
                     OLD.sort,

@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * @property int $id 物件ID
@@ -27,9 +29,6 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  *
  * @property BuildingSetting $buildingSetting
  * @property-read Collection<int, Manager> $personCharge
- * @property-read Collection<int, ActionBtnSetting> $actionBtnSetting
- * @property-read Collection<int, BinderBuildingCategory> $binderBuildingCategory
- * @property-read Collection<int, SalesSchedule> $salesSchedule
  *
  * @method static Building create(array $attributes = [])
  */
@@ -86,5 +85,23 @@ class Building extends Model
     public function buildingSetting(): HasOne
     {
         return $this->HasOne(BuildingSetting::class);
+    }
+
+    /**
+     * 担当者とのリレーション
+     * @return BelongsToMany<int, Manager>
+     */
+    public function personCharge(): BelongsToMany
+    {
+        return $this->BelongsToMany(Manager::class, 'building_invitation');
+    }
+
+    /**
+     * アクションボタン設定とのリレーション
+     * @return HasMany<int, ActionBtnSetting>
+     */
+    public function actionBtnSetting(): HasMany
+    {
+        return $this->hasMany(ActionBtnSetting::class)->orderBy('sort');
     }
 }
