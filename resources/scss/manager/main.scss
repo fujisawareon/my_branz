@@ -1,0 +1,116 @@
+:root {
+    --header-height: 3rem;
+}
+
+header{
+    background-color: #fff;
+    height: var(--header-height);
+    border-bottom: 1px solid var(--brand-color);
+}
+
+.display-container {
+    margin: 0 auto;
+    width: 95%;
+    max-width: 1500px;
+}
+
+.side-menu-area {
+    width: 200px;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--brand-color);
+    color: white;
+    font-weight: bold;
+
+    & > a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #fff;
+        cursor: pointer;
+        transition: .2s;
+        &.active {
+            background-color: rgb(54, 99, 184);
+        }
+
+        &:hover {
+            background-color: #7f8aa0;
+            color: var(--brand-color);
+        }
+    }
+}
+
+.display-area {
+    flex: 1;
+    height: calc(100vh - var(--header-height));
+    background-color: #f1f6ff;
+}
+
+.screen-name {
+    width: 100%;
+    padding: .25rem 1rem;
+    font-weight: bold;
+    background-color: #fff;
+    border-bottom: 1px solid var(--brand-color);
+}
+
+.main-content-area {
+    padding: .5rem;
+}
+
+.content-area {
+    padding: .5rem;
+    background-color: #fff;
+    border-radius: .5rem;
+}
+
+/*************************
+* flash-message
+*************************/
+.flash-message-area {
+    position: relative;
+    overflow: hidden;
+
+    .flash-message-box {
+        width: calc(100% - 1rem);
+        margin: 0.25rem auto;
+        padding: 0.25rem 1rem;
+        display: flex;
+        overflow-wrap: anywhere;
+        transition: .2s;
+        align-items: center;
+        right: 0;
+
+        &.flash-message-success {
+        background-color: #c2deff;
+        color: var(--blue-600);
+        border: solid 1px var(--blue-600);
+        border-radius: 0.5rem;
+        }
+
+        &.flash-message-error {
+        background-color: var(--red-200);
+        color: var(--red-600);
+        border: solid 1px var(--red-600);
+        border-radius: 0.5rem;
+        }
+    }
+
+    .flash-message-hidden {
+        position: relative;
+        right: -100%;
+    }
+
+    .flash-message-box-close {
+        margin-right: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+        margin-right: 1.5rem;
+        }
+    }
+}
+
+
+
+
